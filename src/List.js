@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card'
 import './List.css';
 
-export default function List(props) {
+ const List = (props) => {
   return (
     <section className='List'>
       <header className='List-header'>
@@ -14,11 +14,14 @@ export default function List(props) {
             key={card.id}
             title={card.title}
             content={card.content}
+            deleteItem={props.handleDeleteItem}
           />
+          
         )}
         <button
           type='button'
           className='List-add-button'
+        >
         >
           + Add Random Card
         </button>
@@ -26,3 +29,4 @@ export default function List(props) {
     </section>
   )
 }
+export default List;

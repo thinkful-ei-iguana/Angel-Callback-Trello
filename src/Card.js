@@ -1,16 +1,23 @@
 import React from 'react';
 import './Card.css';
 
-export default function Card(props) {
+const Card=(props) => {  
   return (
     <div className='Card'>
-      <button
-        type='button'
+      <button type='button' onClick={()=> props.deleteItem(props.id)}
       >
         delete
       </button>
-      <h3>{props.title}</h3>
-      <p>{props.content}</p>
+      <h3>{ props.title }</h3>
+      <p>{ props.content }</p>
     </div>
   )
 }
+
+Card.propTypes = {
+  deleteItem: () => {
+
+  }
+}
+
+export default Card;
